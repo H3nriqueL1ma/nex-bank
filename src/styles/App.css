@@ -1,0 +1,235 @@
+/*############# MENU #############*/
+
+#navbar {
+    background-color: #ECF0F1 !important;
+    font-weight: 600;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav-item a {
+    color: #2C3E50 !important;
+}
+
+.nav-item + .nav-item {
+    margin-left: 20px;
+}
+
+#container-nav {
+    margin: 0 30px !important;
+    max-width: 1366px;
+}
+
+#logo-menu {
+    width: 70px;
+    margin: 0 40px 0 0;
+}
+
+.dropdown-toggle::after {
+    background: transparent url('images/arrow-menu.png') no-repeat center center;
+    background-size: 20px;
+    width: 25px;
+    height: 25px;
+    border: none;
+    vertical-align: -20%;
+}
+
+#button-div {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+#user-access {
+    display: flex;
+    border: none;
+    background-color: #2C3E50;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 10px 20px 10px 10px;
+    transition: 0.2s;
+}
+
+#user-access::before {
+    content: "";
+    width: 30px;
+    height: 25px;
+    background: transparent url('images/logo-branco.png') no-repeat center center;
+    background-size: 25px;
+}
+
+#user-access:hover {
+    background-color: #3f5468;
+}
+
+/*############# BANNER #############*/
+
+#space {
+    padding: 40px;
+}
+
+#banner {
+    height: 700px;
+    background-color: #2C3E50;
+}
+
+#banner-text {
+    font-family: Verdana, sans-serif;
+    color: white;
+    font-weight: 600;
+    width: 500px;
+    padding: 0 0 0 40px;
+}
+
+#banner-image {
+    width: 550px;
+}
+
+.white-button {
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    background-color: white !important;
+    color: #2C3E50 !important;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 182px;
+    margin: 30px 35px;
+    position: relative;
+    overflow: hidden;
+    transition: padding-right 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+}
+
+.white-button::before {
+    content: "Abra sua conta Nex";
+    transition: transform 0.3s ease-in-out;
+}
+
+.white-button::after {
+    content: "";
+    width: 35px;
+    height: 25px;
+    background: transparent url('images/arrow-button.png') no-repeat center center !important;
+    background-size: 18px !important;
+    position: absolute;
+    right: 3px;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.white-button:hover {
+    width: 200px !important;
+}
+
+.white-button:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.white-button:hover::before {
+    transform: translateX(-8px);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+.floating {
+    animation: float 2s ease-in-out infinite;
+    z-index: 0;
+}
+
+/*############# SEÇÃO BENEFÍCIOS #############*/
+
+.benefit {
+    margin-top: 30px;
+}
+
+.benefit i {
+    font-size: 50px;
+}
+
+.benefit h3 {
+    font-weight: 600;
+}
+
+.benefit p {
+    font-size: 18px;
+    max-width: 380px;
+}
+
+/*############# SEÇÃO DÚVIDAS #############*/
+
+#accordions {
+    max-width: 700px;
+}
+
+.accordion-item, .accordion-header button {
+    font-size: 17px;
+}
+
+.accordion-button:focus {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: none;
+}
+
+/*############# MENSAGEM ABRIR CONTA #############*/
+
+#message {
+    background-color: #2C3E50;
+    color: white;
+}
+
+#abrir-conta {
+    border: none;
+    background-color: white;
+    color: #2C3E50;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 11px 20px 10px;
+    transition: transform 0.2s;
+}
+
+#abrir-conta:hover {
+    transform: scale(1.03);
+}
+
+/*############# RODAPÉ #############*/
+
+footer {
+    background-color: #ECF0F1;
+}
+
+.informations h6 {
+    font-weight: 600;
+}
+
+.informations a {
+    color: #2C3E50;
+}
+
+.informations i {
+    font-size: 30px;
+}
+
+.informations a + a {
+    margin-left: 20px;
+}
