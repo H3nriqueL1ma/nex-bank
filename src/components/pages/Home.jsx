@@ -1,13 +1,16 @@
 import Menu from "../Menu";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Duvidas from "../Duvidas";
-import Beneficios from "../Beneficios";
+import Duvidas from "../sections-home/Duvidas";
+import Beneficios from "../sections-home/Beneficios";
 import FooterBank from "../Footer";
+import CanvasCookies from "../CanvasCookies";
 
 export default function Home() {
     return (
         <>
+            <CanvasCookies/>
+
             <Menu/>
             <div id="space"></div>
             <Row className="d-flex align-items-center justify-content-center m-0" id="banner">
@@ -23,7 +26,7 @@ export default function Home() {
             <Duvidas/>
             <Row className="m-0">
                 <div id="message" className="d-flex justify-content-center p-3 align-items-center">
-                    <h1 className="m-0">Ainda não é cliente Nex?</h1>
+                    <h1 className="m-0"><b>Ainda não é cliente Nex?</b></h1>
                     <button id="abrir-conta" className="ms-5">ABRA SUA CONTA</button>
                 </div>
             </Row>

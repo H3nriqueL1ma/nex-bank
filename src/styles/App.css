@@ -66,6 +66,22 @@
     background-color: #3f5468;
 }
 
+.dropdown-menu h6 {
+    color: rgb(144, 144, 144) !important;
+}
+
+.dropdown-menu {
+    padding: 30px;
+}
+
+.dropdown-menu div + div {
+    margin-top: 30px;
+}
+
+.about .dropdown-menu {
+    padding: 10px !important;
+}
+
 /*############# BANNER #############*/
 
 #space {
@@ -99,7 +115,7 @@
     font-weight: 500;
     border-radius: 5px;
     padding: 10px 20px;
-    width: 182px;
+    width: 180px;
     margin: 30px 35px;
     position: relative;
     overflow: hidden;
@@ -119,7 +135,7 @@
     background: transparent url('images/arrow-button.png') no-repeat center center !important;
     background-size: 18px !important;
     position: absolute;
-    right: 3px;
+    right: 7px;
     opacity: 0;
     transform: translateX(10px);
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -135,7 +151,7 @@
 }
 
 .white-button:hover::before {
-    transform: translateX(-8px);
+    transform: translateX(-4px);
 }
 
 @keyframes float {
@@ -187,7 +203,7 @@
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: none;
+    background-color: white;
 }
 
 /*############# MENSAGEM ABRIR CONTA #############*/
@@ -232,4 +248,49 @@ footer {
 
 .informations a + a {
     margin-left: 20px;
+}
+
+/*############# COOKIES #############*/
+
+#canvas {
+    max-height: 105px !important;
+}
+
+.offcanvas-body {
+    overflow: hidden !important;
+}
+
+#buttons-cookies button + button {
+    margin-left: 20px;
+}
+
+#buttons-cookies button {
+    border: none;
+    color: #2C3E50;
+    padding: 10px 15px;
+}
+
+#text-cookies {
+    padding: 20px;
+    color: rgb(144, 144, 144);
+    font-size: 14px;
+}
+
+.config, .button-cookies {
+    border: 1px solid #2C3E50 !important;
+}
+
+.button-cookies {
+    background-color: #2C3E50 !important;
+    color: white !important;
+}
+
+#privacity {
+    color: rgb(144, 144, 144) !important;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.btn-close:focus {
+    box-shadow: none !important;
 }
