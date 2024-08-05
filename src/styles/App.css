@@ -66,6 +66,11 @@
     background-color: #3f5468;
 }
 
+#button-div a {
+    text-decoration: none;
+    color: white;
+}
+
 .dropdown-menu h6 {
     color: rgb(144, 144, 144) !important;
 }
@@ -264,7 +269,7 @@ footer {
     margin-left: 20px;
 }
 
-#buttons-cookies button {
+#buttons-cookies button, #modal-cookies button {
     border: none;
     color: #2C3E50;
     padding: 10px 15px;
@@ -293,4 +298,25 @@ footer {
 
 .btn-close:focus {
     box-shadow: none !important;
+}
+
+.modal-content {
+    border-radius: 5px !important;
+}
+
+#modal-cookies input {
+    margin-right: 5px;
+}
+
+#modal-cookies p {
+    font-size: 11px;
+    color: rgb(144, 144, 144);
+}
+
+#logo-cookies {
+    width: 60px;
+}
+
+#header-cookies img + div {
+    margin-left: 10px;
 }

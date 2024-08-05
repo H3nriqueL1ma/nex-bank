@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 
 export default function Menu() {
     return (
@@ -37,7 +38,9 @@ export default function Menu() {
                         </NavDropdown>
                     </Nav>
                     <div id="button-div">
-                        <button id="user-access">Acesse sua conta</button>
+                        <Link to={"/login"}>
+                            <button id="user-access">Acesse sua conta</button>
+                        </Link>
                     </div>
                     </Navbar.Collapse>
                 </Container>

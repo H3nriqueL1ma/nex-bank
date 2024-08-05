@@ -3,6 +3,7 @@ import Col from "react-bootstrap/esm/Col";
 import Row from "react-bootstrap/esm/Row";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Cookies from "js-cookie";
+import Modal from "react-bootstrap/Modal";
 
 export default function CanvasCookies({ show, handleClose }) {
     const [showSettings, setShowSettings] = useState(false);
@@ -69,14 +70,47 @@ export default function CanvasCookies({ show, handleClose }) {
                             <a id="privacity" href="">Política de Privacidade</a>
                         </Col>
                         <Col id="buttons-cookies" lg={6} className="d-flex justify-content-center align-items-center">
-                            <button className="config" onClick={acceptCookies}>Configurações de Cookies</button>
+                            <button className="config" onClick={setShowSettings}>Configurações de Cookies</button>
                             <button className="button-cookies" onClick={rejectCookies}>Rejeitar todos</button>
-                            <button className="button-cookies" onClick={() => setShowSettings(true)}>Aceitar todos</button>
+                            <button className="button-cookies" onClick={acceptCookies}>Aceitar todos</button>
                         </Col>
                     </Row>
                     <Offcanvas.Header closeButton></Offcanvas.Header>
                 </Offcanvas.Body>
             </Offcanvas>
+
+            <Modal
+                id="modal-cookies"
+                show={showSettings}
+                onHide={setShowSettings}
+                backdrop="static"
+                keyboard={false}
+            >
+                <Modal.Header id="header-cookies" closeButton>
+                    <img id="logo-cookies" src="logo.png" alt="logo" />
+                    <Modal.Title>Configurações de Cookies</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <label>
+                        A sua privacidade
+                        <p>Quando visita um website, este pode armazenar ou recolher informações no seu navegador, principalmente na forma de cookies. Esta informação pode ser sobre si, as suas preferências ou o seu dispositivo e é utilizada principalmente para fazer o website funcionar conforme o esperado. A informação normalmente não o identifica diretamente, mas pode dar-lhe uma experiência web mais personalizada. Uma vez que respeitamos o seu direito à privacidade, pode optar por não permitir alguns tipos de cookies. Clique nos cabeçalhos das diferentes categorias para saber mais e alterar as nossas configurações predefinidas. No entanto, o bloqueio de alguns tipos de cookies pode afetar a sua experiência no website e os serviços que podemos oferecer.
+                        <a id="privacity" href="">Política de Privacidade</a></p>
+                    </label>
+                    <label>
+                        <input type="checkbox" checked={preferences.necessary} disabled />
+                        Cookies Estritamente Necessários
+                        <p>Estes cookies são necessários para que o website funcione e não podem ser desligados nos nossos sistemas. Normalmente, eles só são configurados em resposta a ações levadas a cabo por si e que correspondem a uma solicitação de serviços, tais como definir as suas preferências de privacidade, segurança, iniciar sessão ou preencher formulários. Pode configurar o seu navegador para bloquear ou alertá-lo(a) sobre esses cookies, mas algumas partes do website não funcionarão. Estes cookies não armazenam qualquer informação pessoal identificável.</p>
+                    </label>
+                    <label>
+                        <input type="checkbox" checked={preferences.functionality} onChange={() => handlePreferenceChange("functionality")} />
+                        Cookies de Funcionalidade
+                        <p>Estes cookies permitem que o site forneça uma funcionalidade e personalização melhoradas. Podem ser estabelecidos por nós ou por fornecedores externos cujos serviços adicionámos às nossas páginas. Se não permitir estes cookies algumas destas funcionalidades, ou mesmo todas, podem não atuar corretamente.</p>
+                    </label>
+                </Modal.Body>
+                <Modal.Footer>
+                    <button className="button-cookies" onClick={saveCookiesSettings}>Salvar Configurações</button>
+                </Modal.Footer>
+            </Modal>
         </>
     );
 }
