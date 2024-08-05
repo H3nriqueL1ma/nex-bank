@@ -39,7 +39,9 @@ export default function Menu() {
                     </Nav>
                     <div id="button-div">
                         <Link to={"/login"}>
-                            <button id="user-access">Acesse sua conta</button>
+                            <button id="user-access">
+                                <p className="m-0">Acesse sua conta</p>
+                            </button>
                         </Link>
                     </div>
                     </Navbar.Collapse>

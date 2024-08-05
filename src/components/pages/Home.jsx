@@ -14,9 +14,11 @@ export default function Home() {
             <Menu/>
             <div id="space"></div>
             <Row className="d-flex align-items-center justify-content-center m-0" id="banner">
-                <Col lg={6} id="text" className="p-5">
-                    <h1 id="banner-text">Sua vida financeira de uma forma mais prática</h1>
-                    <button className="white-button"></button>
+                <Col lg={6} id="text" className="p-5 d-flex justify-content-center">
+                    <div>
+                        <h1 id="banner-text">Sua vida financeira de uma forma mais prática</h1>
+                        <button className="white-button"></button>
+                    </div>
                 </Col>
                 <Col lg={6} className="text-center">
                     <img id="banner-image" alt="banner-image" src="iphone.png" className="floating"></img>

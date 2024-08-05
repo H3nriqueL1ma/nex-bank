@@ -19,7 +19,7 @@
 
 #container-nav {
     margin: 0 30px !important;
-    max-width: 1366px;
+    max-width: 100%;
 }
 
 #logo-menu {
@@ -64,6 +64,10 @@
 
 #user-access:hover {
     background-color: #3f5468;
+}
+
+#user-access p {
+    padding-top: 1px;
 }
 
 #button-div a {
@@ -117,10 +121,10 @@
     background-color: white !important;
     color: #2C3E50 !important;
     font-family: "Roboto", sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     border-radius: 5px;
     padding: 10px 20px;
-    width: 180px;
+    width: 192px;
     margin: 30px 35px;
     position: relative;
     overflow: hidden;
@@ -140,7 +144,7 @@
     background: transparent url('images/arrow-button.png') no-repeat center center !important;
     background-size: 18px !important;
     position: absolute;
-    right: 7px;
+    right: 2px;
     opacity: 0;
     transform: translateX(10px);
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -192,6 +196,10 @@
     max-width: 380px;
 }
 
+#benefits-title {
+    font-weight: 600;
+}
+
 /*############# SEÇÃO DÚVIDAS #############*/
 
 #accordions {
@@ -211,6 +219,10 @@
     background-color: white;
 }
 
+#doubts-title {
+    font-weight: 600;
+}
+
 /*############# MENSAGEM ABRIR CONTA #############*/
 
 #message {
@@ -223,7 +235,7 @@
     background-color: white;
     color: #2C3E50;
     font-family: "Roboto", sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     border-radius: 5px;
     padding: 11px 20px 10px;
     transition: transform 0.2s;
@@ -319,4 +331,91 @@ footer {
 
 #header-cookies img + div {
     margin-left: 10px;
+}
+
+/*############# PÁGINA LOGIN #############*/
+
+#banner-login {
+    height: 100vh;
+    background-color: #2C3E50;
+}
+
+#banner-login img {
+    width: 200px;
+}
+
+#banner-login h1, #banner-login h2 {
+    color: white;
+}
+
+#banner-login h2 {
+    font-weight: 600;
+}
+
+#card-image {
+    width: 730px !important;
+    z-index: 0;
+}
+
+#login {
+    z-index: 1;
+    background-color: white;
+}
+
+#logo-login {
+    width: 120px;
+    margin: 20px;
+}
+
+#login h3 {
+    font-weight: 600;
+}
+
+#login form input {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid #2C3E50;
+    width: 400px;
+}
+
+#login form input:focus {
+    outline-color: #2C3E50;
+}
+
+#login form {
+    width: 500px;
+}
+
+#login form input + input {
+    margin-top: 20px;
+}
+
+#login form input + div {
+    margin-top: 20px;
+}
+
+#login form a {
+    color: #3f5468;
+    font-weight: 600;
+}
+
+#login form p {
+    margin-top: 50px;
+    font-size: 14px;
+}
+
+#submit-login {
+    border: none;
+    border-radius: 5px;
+    background-color: #2C3E50;
+    color: white;
+    padding: 10px 10px;
+    width: 400px;
+    transition: 0.2s;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#submit-login:hover {
+    background-color: #3f5468;
 }

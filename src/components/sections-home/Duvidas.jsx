@@ -5,8 +5,8 @@ export default function Duvidas() {
     return (
         <>
             <Row className="m-0 pt-5 mb-5 justify-content-center">
-                <h1 className="text-center">Dúvidas?</h1>
-                <Accordion id="accordions" className="p-0">
+                <h1 id="doubts-title" className="text-center">Dúvidas?</h1>
+                <Accordion id="accordions" className="p-0 mt-3">
                     <Accordion.Item eventKey="0">
                         <Accordion.Header>O que é uma Conta Corrente?</Accordion.Header>
                         <Accordion.Body>
