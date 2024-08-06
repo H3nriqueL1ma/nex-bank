@@ -3,7 +3,7 @@
 #navbar {
     background-color: #ECF0F1 !important;
     font-weight: 600;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 2px 0;
     position: fixed;
     width: 100%;
     z-index: 1;
@@ -384,6 +384,7 @@ footer {
 
 #login form {
     width: 500px;
+    margin-top: 70px !important;
 }
 
 #login form input + input {
@@ -404,6 +405,11 @@ footer {
     font-size: 14px;
 }
 
+#login form p + p {
+    margin-top: 5px;
+    margin-bottom: 0 !important;
+}
+
 #submit-login {
     border: none;
     border-radius: 5px;
@@ -418,4 +424,25 @@ footer {
 
 #submit-login:hover {
     background-color: #3f5468;
+}
+
+/*############# PÁGINA PRIVACIDADE #############*/
+
+#privacidade-content {
+    padding-top: 10px;
+    width: 1000px;
+}
+#privacidade-content h1 {
+    font-weight: 600;
+}
+
+/*############# PÁGINA LOADING #############*/
+
+#loading-page {
+    height: 100vh;
+}
+
+#loading-page .spinner-border {
+    width: 3rem;
+    height: 3rem;
 }

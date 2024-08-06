@@ -10,7 +10,7 @@ export default function Login() {
                 <Col id="banner-login" lg={6} className="text-center">
                     <img src="logo-branco.png" alt="logo"/>
                     <h1>Nex Conta digital</h1>
-                    <h2>Não perca tempo e crie sua conta!</h2>
+                    <h2>Não perca tempo e abra sua conta!</h2>
                     <img id="card-image" alt="card-image" src="credit-card-image.png"/>
                 </Col>
                 <Col id="login" lg={6}>
@@ -28,6 +28,7 @@ export default function Login() {
                         <Link to={"/forget-pass"}>Esqueci minha senha</Link>
                         <div>
                             <p>Alguma dúvida? Acesse a <Link to={""}>Central de Ajuda</Link>.</p>
+                            <p>Para conhecer nossa política de privacidade, acesse <Link to={"/politica-de-privacidade"}>aqui</Link>.</p>
                         </div>
                     </form>
                 </Col>

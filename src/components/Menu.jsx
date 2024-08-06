@@ -9,8 +9,10 @@ export default function Menu() {
         <>
             <Navbar id="navbar" expand="lg" className="bg-body-tertiary p-0">
                 <Container id="container-nav">
-                    <Navbar.Brand href="#home">
-                        <img id="logo-menu" src="logo.png" alt="logo"></img>
+                    <Navbar.Brand>
+                        <Link to={"/"}>
+                            <img id="logo-menu" src="logo.png" alt="logo"></img>
+                        </Link>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">

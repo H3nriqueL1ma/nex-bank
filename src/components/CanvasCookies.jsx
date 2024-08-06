@@ -4,6 +4,7 @@ import Row from "react-bootstrap/esm/Row";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Cookies from "js-cookie";
 import Modal from "react-bootstrap/Modal";
+import {Link} from "react-router-dom";
 
 export default function CanvasCookies({ show, handleClose }) {
     const [showSettings, setShowSettings] = useState(false);
@@ -67,7 +68,7 @@ export default function CanvasCookies({ show, handleClose }) {
                     <Row>
                         <Col id="text-cookies" lg={6}>
                             Usamos cookies para melhorar sua experiência e analisar nosso tráfego. Ao clicar em "Aceitar todos", você concorda com nosso uso de cookies. Para saber mais ou gerenciar suas preferências, clique em "Configurações de Cookies". 
-                            <a id="privacity" href="">Política de Privacidade</a>
+                            <Link id="privacity" to={"/politica-de-privacidade"}>Política de Privacidade</Link>
                         </Col>
                         <Col id="buttons-cookies" lg={6} className="d-flex justify-content-center align-items-center">
                             <button className="config" onClick={setShowSettings}>Configurações de Cookies</button>
