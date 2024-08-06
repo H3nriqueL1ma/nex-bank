@@ -109,8 +109,8 @@ export default function Privacidade() {
                             <h5><b>8. Contato</b></h5>
 
                             Se você tiver dúvidas sobre esta Política de Privacidade ou sobre o tratamento de suas
-                            informações pessoais, entre em contato conosco pelo e-mail nexbank@gmail.com ou pelo
-                            telefone (11) 92345-6789.
+                            informações pessoais, entre em contato conosco pelo e-mail <b>nexbank@gmail.com</b> ou pelo
+                            telefone <b>(11) 92345-6789</b>.
                         </p>
                     </Col>
                 </Row>

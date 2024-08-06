@@ -353,7 +353,7 @@ footer {
 }
 
 #card-image {
-    width: 730px !important;
+    width: 79% !important;
     z-index: 0;
 }
 
@@ -382,13 +382,9 @@ footer {
     outline-color: #2C3E50;
 }
 
-#login form {
+#login #form-login {
     width: 500px;
     margin-top: 70px !important;
-}
-
-#login form input + input {
-    margin-top: 20px;
 }
 
 #login form input + div {
@@ -398,6 +394,14 @@ footer {
 #login form a {
     color: #3f5468;
     font-weight: 600;
+}
+
+#login form input + input {
+    margin-top: 20px;
+}
+
+#login form div + div {
+    margin-top: 20px;
 }
 
 #login form p {
@@ -424,6 +428,44 @@ footer {
 
 #submit-login:hover {
     background-color: #3f5468;
+}
+
+#login form .span-eye {
+    cursor: pointer;
+    margin-left: -35px;
+}
+
+#centralizer-link-create-account {
+    width: 400px;
+}
+
+#centralizer-link-create-account h6 {
+    font-weight: 600;
+}
+
+/*############# PÁGINA REGISTRO #############*/
+
+#form-registro {
+    margin-top: -20px !important;
+}
+
+#aceitar-tratar-dados {
+    width: 400px;
+}
+
+#check-register {
+    width: 120px !important;
+    cursor: pointer;
+}
+
+input[type=checkbox] {
+  -ms-transform: scale(1.5); /* IE */
+  -moz-transform: scale(1.5); /* FF */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  -o-transform: scale(1.5); /* Opera */
+  transform: scale(1.5);
+  padding: 10px;
+  border: 1px solid #2C3E50;
 }
 
 /*############# PÁGINA PRIVACIDADE #############*/
