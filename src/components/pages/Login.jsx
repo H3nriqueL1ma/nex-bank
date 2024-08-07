@@ -52,13 +52,22 @@ export default function Login() {
                         <img id="logo-login" src="logo.png" alt="logo"/>
                     </div>
 
-                    <form id="form-login" className="m-auto text-center ">
+                    <form id="form-login" className="m-auto text-center">
                         <div id="centralizer-link-create-account" className="text-end m-auto">
                             <p>Não possui conta? <Link to={"/registre-se"}>Abra sua conta</Link>.</p>
                         </div>
-                        <IMaskInput id="CPF" mask="000.000.000-00" placeholder="CPF" required autoFocus/>
+                        <IMaskInput
+                            id="CPF"
+                            mask="000.000.000-00"
+                            placeholder="CPF"
+                            required
+                            autoFocus/>
                         <div id="pass-div" >
-                            <input id="password" type={type} placeholder="Digite sua senha" required/>
+                            <input
+                                id="password"
+                                type={type}
+                                placeholder="Digite sua senha"
+                                required/>
                             <span className="span-eye" onClick={handleToggle}>
                                 <Icon id="icon-eye" icon={icon} size={23} />
                             </span>

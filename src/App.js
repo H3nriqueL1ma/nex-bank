@@ -6,6 +6,7 @@ import Privacidade from "./components/pages/Privacidade";
 import {useEffect, useState} from "react";
 import LoadingPage from "./components/pages/LoadingPage";
 import Registro from './components/pages/Registro';
+import CriarSenha from "./components/pages/CriarSenha";
 
 function usePageLoading() {
     const [loading, setLoading] = useState(false);
@@ -35,6 +36,7 @@ function AppContent() {
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/registre-se" element={<Registro />} />
+                    <Route path="/criar-senha" element={<CriarSenha />} />
                     <Route path="/politica-de-privacidade" element={<Privacidade />} />
                 </Routes>
             )}
