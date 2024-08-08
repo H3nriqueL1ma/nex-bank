@@ -2,13 +2,13 @@ import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import {IMaskInput} from "react-imask";
 import {Link, useNavigate} from "react-router-dom";
-import {useForm} from "react-hook-form";
+import {Controller, useForm} from "react-hook-form";
 import {sendData} from "../../routes/routesAPI";
 
 const URL_CREATE_SESSION = "http://localhost:8080/client/session-data";
 
 export default function Registro() {
-    const { register, handleSubmit } = useForm();
+    const { register, control, handleSubmit } = useForm();
     const navigate = useNavigate();
 
     async function submitForm(data) {
@@ -20,7 +20,10 @@ export default function Registro() {
             client_birthdate: data.data_nascimento_cliente
         }
 
+        console.log(clientData)
+
         const response = await sendData(URL_CREATE_SESSION, clientData);
+        console.log(response);
 
         navigate("/criar-senha");
     }
@@ -50,32 +53,53 @@ export default function Registro() {
                             placeholder="Nome Completo*"
                             required
                             {...register("nome_cliente")}/>
-                        <IMaskInput
-                            id="CPF-registro"
-                            mask="000.000.000-00"
-                            placeholder="CPF*"
-                            required
-                            {...register("CPF_cliente")}/>
+                        <Controller 
+                            name="CPF_cliente"
+                            control={control}
+                            render={({ field }) => (
+                                <IMaskInput
+                                    id="CPF-registro"
+                                    type="text"
+                                    mask="000.000.000-00"
+                                    placeholder="CPF*"
+                                    required
+                                    {...field}/>
+                                )}
+                            />
                         <input
                             id="email"
                             type="email"
                             placeholder="E-mail*"
                             required
                             {...register("email_cliente")}/>
-                        <IMaskInput
-                            id="celular"
-                            mask="(00) 00000-0000"
-                            type="text"
-                            placeholder="Celular*"
-                            required
-                            {...register("celular_cliente")}/>
-                        <IMaskInput
-                            id="data-nascimento"
-                            mask="00/00/0000"
-                            type="text"
-                            placeholder="Data de Nascimento*"
-                            required
-                            {...register("data_nascimento_cliente")}/>
+                        <Controller
+                            name="celular_cliente"
+                            control={control}
+                            render={({ field }) => (
+                                <IMaskInput
+                                    id="celular"
+                                    mask="(00) 00000-0000"
+                                    type="text"
+                                    placeholder="Celular*"
+                                    required
+                                    {...field}
+                                />
+                            )}
+                        />
+                        <Controller
+                            name="data_nascimento_cliente"
+                            control={control}
+                            render={({ field }) => (
+                                <IMaskInput
+                                    id="data-nascimento"
+                                    mask="00/00/0000"
+                                    type="text"
+                                    placeholder="Data de Nascimento*"
+                                    required
+                                    {...field}
+                                />
+                            )}
+                        />
                         <div id="aceitar-tratar-dados" className="d-flex align-items-center justify-content-center m-auto text-start mt-3">
                             <input id="check-register" type="checkbox" required/>
                             <h6>Autorizo o Nex a tratar os meus dados pessoais e declaro que li e estou ciente da <Link to={"/politica-de-privacidade"}>Política de Privacidade</Link></h6>

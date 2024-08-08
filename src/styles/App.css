@@ -348,6 +348,10 @@ footer {
     color: white;
 }
 
+#banner-login h1 {
+    font-weight: 400;
+}
+
 #banner-login h2 {
     font-weight: 600;
 }

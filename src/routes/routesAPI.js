@@ -9,6 +9,8 @@ export async function sendData(url, data) {
         })
             .then(response => response.json())
             .then(response => { return response; })
+
+        return res;
     } catch (error) {
         console.error("Error sending data: ", error);
     }
