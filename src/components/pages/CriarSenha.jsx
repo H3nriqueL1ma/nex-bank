@@ -1,12 +1,12 @@
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Icon from "react-icons-kit";
 import {useEffect, useState} from "react";
 import { eyeOff } from "react-icons-kit/feather/eyeOff";
 import { eye } from "react-icons-kit/feather/eye";
-import {sendData} from "../../routes/routesAPI";
+import { sendData } from "../routes/routesAPI";
 import ErrorModal from "../errors-and-animations/ErrorModal";
 
 const URL_CREATE_USER = "http://localhost:8080/client/register";
@@ -55,7 +55,7 @@ export default function Registro() {
 
         const response = await sendData(URL_CREATE_USER, clientData);
         
-        if (!response.code === 500 || !response.code === 400) {
+        if (response.code === 201) {
             navigate("/login");
         } else {
             setTextModal("Não foi possível cadastrar os dados. Verifique se todos os campos obrigatórios estão preenchidos corretamente e se o Usuário não está registrado.");

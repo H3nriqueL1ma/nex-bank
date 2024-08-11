@@ -3,9 +3,9 @@ import Col from "react-bootstrap/esm/Col";
 import {IMaskInput} from "react-imask";
 import {Link, useNavigate} from "react-router-dom";
 import {Controller, useForm} from "react-hook-form";
-import {sendData} from "../../routes/routesAPI";
 import ErrorModal from "../errors-and-animations/ErrorModal";
 import { useState } from "react";
+import { sendData } from "../routes/routesAPI";
 
 const URL_CREATE_SESSION = "http://localhost:8080/client/session-data";
 
@@ -27,7 +27,7 @@ export default function Registro() {
 
         const response = await sendData(URL_CREATE_SESSION, clientData);
 
-        if (!response.code === 500 || !response.code === 400) {
+        if (response.code === 201) {
             navigate("/criar-senha");
         } else {
             setTextModal("Não foi possível cadastrar os dados. Verifique se todos os campos obrigatórios estão preenchidos corretamente e se o CPF, e-mail ou telefone fornecido não está registrado.");
@@ -53,7 +53,9 @@ export default function Registro() {
                 <Col id="login" lg={6}>
                     <div className="d-flex align-items-center justify-content-end">
                         <h3>Abra sua conta Nex</h3>
-                        <img id="logo-login" src="logo.png" alt="logo"/>
+                        <Link to={"/"}>
+                            <img id="logo-login" src="logo.png" alt="logo"/>
+                        </Link>
                     </div>
 
                     <form id="form-registro" className="m-auto text-center" onSubmit={handleSubmit(submitForm)}>

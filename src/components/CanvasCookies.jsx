@@ -95,7 +95,7 @@ export default function CanvasCookies({ show, handleClose }) {
                     <label>
                         A sua privacidade
                         <p>Quando visita um website, este pode armazenar ou recolher informações no seu navegador, principalmente na forma de cookies. Esta informação pode ser sobre si, as suas preferências ou o seu dispositivo e é utilizada principalmente para fazer o website funcionar conforme o esperado. A informação normalmente não o identifica diretamente, mas pode dar-lhe uma experiência web mais personalizada. Uma vez que respeitamos o seu direito à privacidade, pode optar por não permitir alguns tipos de cookies. Clique nos cabeçalhos das diferentes categorias para saber mais e alterar as nossas configurações predefinidas. No entanto, o bloqueio de alguns tipos de cookies pode afetar a sua experiência no website e os serviços que podemos oferecer.
-                        <a id="privacity" href="">Política de Privacidade</a></p>
+                        <Link id="privacity" to={"/politica-de-privacidade"}>Política de Privacidade</Link></p>
                     </label>
                     <label>
                         <input type="checkbox" checked={preferences.necessary} disabled />

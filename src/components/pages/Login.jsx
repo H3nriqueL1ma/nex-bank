@@ -1,15 +1,25 @@
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import {IMaskInput} from "react-imask";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import { useEffect, useState } from "react";
 import { eyeOff } from "react-icons-kit/feather/eyeOff";
 import { eye } from "react-icons-kit/feather/eye";
 import Icon from "react-icons-kit";
+import { Controller, useForm } from "react-hook-form";
+import encodeCredentials from "../routes/authCredentials";
+import { authData } from "../routes/routesAPI";
+import ErrorModal from "../errors-and-animations/ErrorModal";
+
+const URL_LOGIN_AUTH = "http://localhost:8080/client/login";
 
 export default function Login() {
+    const { register, control, handleSubmit } = useForm();
+    const navigate = useNavigate();
     const [type, setType] = useState("password");
     const [icon, setIcon] = useState(eyeOff);
+    const [textModal, setTextModal] = useState("");
+    const [showModal, setShowModal] = useState(false);
 
     const isEdge = () => window.navigator.userAgent.indexOf("Edg") > 1;
 
@@ -37,8 +47,27 @@ export default function Login() {
         }
     }
 
+    async function submitForm(data) {
+        const encodedCredentials = encodeCredentials(data.CPF_login, data.pass_login);
+
+        const response = await authData(URL_LOGIN_AUTH, encodedCredentials);
+
+        if (response.code === 200) {
+            navigate("/dashboard");
+        } else {
+            setTextModal("Não foi possível logar na sua conta. Verifique se o CPF está registrado e a senha correta.");
+            setShowModal(true);
+        }
+    }
+
     return (
         <>
+            <ErrorModal 
+                show={showModal} 
+                handleClose={ () => setShowModal(false) }
+                text={textModal}
+            />
+
             <Row className="m-0">
                 <Col id="banner-login" lg={6} className="text-center">
                     <img src="logo-branco.png" alt="logo"/>
@@ -49,24 +78,34 @@ export default function Login() {
                 <Col id="login" lg={6}>
                     <div className="d-flex align-items-center justify-content-end">
                         <h3>Acesse sua conta</h3>
-                        <img id="logo-login" src="logo.png" alt="logo"/>
+                        <Link to={"/"}>
+                            <img id="logo-login" src="logo.png" alt="logo"/>
+                        </Link>
                     </div>
 
-                    <form id="form-login" className="m-auto text-center">
+                    <form id="form-login" className="m-auto text-center" onSubmit={handleSubmit(submitForm)}>
                         <div id="centralizer-link-create-account" className="text-end m-auto">
                             <p>Não possui conta? <Link to={"/registre-se"}>Abra sua conta</Link>.</p>
                         </div>
-                        <IMaskInput
-                            id="CPF"
-                            mask="000.000.000-00"
-                            placeholder="CPF"
-                            required/>
+                        <Controller 
+                            name="CPF_login"
+                            control={control}
+                            render={({ field }) => (
+                                <IMaskInput
+                                id="CPF"
+                                mask="000.000.000-00"
+                                placeholder="CPF"
+                                required
+                                {...field}/>
+                            )}
+                        />
                         <div id="pass-div" >
                             <input
                                 id="password"
                                 type={type}
                                 placeholder="Digite sua senha"
-                                required/>
+                                required
+                                {...register("pass_login")}/>
                             <span className="span-eye" onClick={handleToggle}>
                                 <Icon id="icon-eye" icon={icon} size={23} />
                             </span>
