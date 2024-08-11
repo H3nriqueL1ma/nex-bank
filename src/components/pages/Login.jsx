@@ -60,8 +60,7 @@ export default function Login() {
                             id="CPF"
                             mask="000.000.000-00"
                             placeholder="CPF"
-                            required
-                            autoFocus/>
+                            required/>
                         <div id="pass-div" >
                             <input
                                 id="password"

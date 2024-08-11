@@ -340,6 +340,10 @@ footer {
     background-color: #2C3E50;
 }
 
+i + #modal-text {
+    margin-left: 15px;
+}
+
 #banner-login img {
     width: 200px;
 }

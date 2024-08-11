@@ -4,12 +4,16 @@ import {IMaskInput} from "react-imask";
 import {Link, useNavigate} from "react-router-dom";
 import {Controller, useForm} from "react-hook-form";
 import {sendData} from "../../routes/routesAPI";
+import ErrorModal from "../errors-and-animations/ErrorModal";
+import { useState } from "react";
 
 const URL_CREATE_SESSION = "http://localhost:8080/client/session-data";
 
 export default function Registro() {
     const { register, control, handleSubmit } = useForm();
     const navigate = useNavigate();
+    const [textModal, setTextModal] = useState("");
+    const [showModal, setShowModal] = useState(false);
 
     async function submitForm(data) {
         const clientData = {
@@ -17,19 +21,28 @@ export default function Registro() {
             client_cpf: data.CPF_cliente,
             client_email: data.email_cliente,
             client_phone_number: data.celular_cliente,
-            client_birthdate: data.data_nascimento_cliente
+            client_birthdate: data.data_nascimento_cliente,
+            check_value: data.check_value
         }
 
-        console.log(clientData)
-
         const response = await sendData(URL_CREATE_SESSION, clientData);
-        console.log(response);
 
-        navigate("/criar-senha");
+        if (!response.code === 500 || !response.code === 400) {
+            navigate("/criar-senha");
+        } else {
+            setTextModal("Não foi possível cadastrar os dados. Verifique se todos os campos obrigatórios estão preenchidos corretamente e se o CPF, e-mail ou telefone fornecido não está registrado.");
+            setShowModal(true);
+        }
     }
 
     return (
         <>
+            <ErrorModal 
+                show={showModal} 
+                handleClose={ () => setShowModal(false) }
+                text={textModal}
+            />
+
             <Row className="m-0">
                 <Col id="banner-login" lg={6} className="text-center">
                     <img src="logo-branco.png" alt="logo"/>
@@ -78,7 +91,7 @@ export default function Registro() {
                             render={({ field }) => (
                                 <IMaskInput
                                     id="celular"
-                                    mask="(00) 00000-0000"
+                                    mask="(00) 90000-0000"
                                     type="text"
                                     placeholder="Celular*"
                                     required
@@ -101,7 +114,11 @@ export default function Registro() {
                             )}
                         />
                         <div id="aceitar-tratar-dados" className="d-flex align-items-center justify-content-center m-auto text-start mt-3">
-                            <input id="check-register" type="checkbox" required/>
+                            <input 
+                            id="check-register" 
+                            type="checkbox" 
+                            required
+                            {...register("check_value")}/>
                             <h6>Autorizo o Nex a tratar os meus dados pessoais e declaro que li e estou ciente da <Link to={"/politica-de-privacidade"}>Política de Privacidade</Link></h6>
                         </div>
                         <div>

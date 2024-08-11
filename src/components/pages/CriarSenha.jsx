@@ -7,12 +7,16 @@ import {useEffect, useState} from "react";
 import { eyeOff } from "react-icons-kit/feather/eyeOff";
 import { eye } from "react-icons-kit/feather/eye";
 import {sendData} from "../../routes/routesAPI";
+import ErrorModal from "../errors-and-animations/ErrorModal";
 
 const URL_CREATE_USER = "http://localhost:8080/client/register";
 
 export default function Registro() {
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
+
+    const [textModal, setTextModal] = useState("");
+    const [showModal, setShowModal] = useState(false);
 
     const [type, setType] = useState("password");
     const [icon, setIcon] = useState(eyeOff);
@@ -44,18 +48,29 @@ export default function Registro() {
     }
 
     async function submitForm(data) {
-
         const clientData = {
             client_username: data.nome_usuario,
             client_password: data.senha_usuario
         }
 
         const response = await sendData(URL_CREATE_USER, clientData);
-        console.log(response);
+        
+        if (!response.code === 500 || !response.code === 400) {
+            navigate("/login");
+        } else {
+            setTextModal("Não foi possível cadastrar os dados. Verifique se todos os campos obrigatórios estão preenchidos corretamente e se o Usuário não está registrado.");
+            setShowModal(true);
+        }
     }
 
     return (
         <>
+            <ErrorModal 
+                show={showModal} 
+                handleClose={ () => setShowModal(false) }
+                text={textModal}
+            />
+
             <Row className="m-0">
                 <Col id="banner-login" lg={6} className="text-center">
                     <img src="logo-branco.png" alt="logo"/>
