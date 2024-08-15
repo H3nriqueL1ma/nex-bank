@@ -1,7 +1,7 @@
-import Menu from "../Menu";
+import Menu from "../miscellaneous-components/pages-components/Menu";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
-import FooterBank from "../Footer";
+import FooterBank from "../miscellaneous-components/pages-components/Footer";
 
 export default function Privacidade() {
     return (

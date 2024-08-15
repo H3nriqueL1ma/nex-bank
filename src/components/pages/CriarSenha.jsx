@@ -7,7 +7,8 @@ import {useEffect, useState} from "react";
 import { eyeOff } from "react-icons-kit/feather/eyeOff";
 import { eye } from "react-icons-kit/feather/eye";
 import { sendData } from "../routes/routesAPI";
-import ErrorModal from "../errors-and-animations/ErrorModal";
+import ErrorModal from "../errors-animations-functions/ErrorModal";
+import InputCustom from "../miscellaneous-components/inputs/InputCustom";
 
 const URL_CREATE_USER = "http://localhost:8080/client/register";
 
@@ -88,19 +89,19 @@ export default function Registro() {
                         <div id="centralizer-link-create-account" className="text-start m-auto mb-3 mt-2">
                             <h6>Crie seu nome de usuário e nova senha:</h6>
                         </div>
-                        <input
+                        <InputCustom
                             id="nome-usuário"
                             type="text"
                             placeholder="Usuário"
-                            required
-                            {...register("nome_usuario")}/>
+                            register={register("nome_usuario")}
+                        />
                         <div id="pass-div">
-                            <input
+                            <InputCustom
                                 id="password"
                                 type={type}
                                 placeholder="Nova Senha"
-                                required
-                                {...register("senha_usuario")}/>
+                                register={register("senha_usuario")}
+                            />
                             <span className="span-eye" onClick={handleToggle}>
                                 <Icon id="icon-eye" icon={icon} size={23}/>
                             </span>

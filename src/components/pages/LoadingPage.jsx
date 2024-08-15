@@ -1,4 +1,4 @@
-import Loading from "../errors-and-animations/Loading";
+import Loading from "../errors-animations-functions/Loading";
 
 export default function LoadingPage() {
     return (

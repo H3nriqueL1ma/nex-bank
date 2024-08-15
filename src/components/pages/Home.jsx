@@ -1,10 +1,10 @@
-import Menu from "../Menu";
+import Menu from "../miscellaneous-components/pages-components/Menu";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Duvidas from "../sections-home/Duvidas";
 import Beneficios from "../sections-home/Beneficios";
-import FooterBank from "../Footer";
-import CanvasCookies from "../CanvasCookies";
+import FooterBank from "../miscellaneous-components/pages-components/Footer";
+import CanvasCookies from "../miscellaneous-components/modals-and-canvas/CanvasCookies";
 
 export default function Home() {
     return (

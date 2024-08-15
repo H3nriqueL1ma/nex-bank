@@ -1,15 +1,16 @@
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
-import {IMaskInput} from "react-imask";
 import {Link, useNavigate} from "react-router-dom";
 import { useEffect, useState } from "react";
 import { eyeOff } from "react-icons-kit/feather/eyeOff";
 import { eye } from "react-icons-kit/feather/eye";
 import Icon from "react-icons-kit";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import encodeCredentials from "../routes/authCredentials";
 import { authData } from "../routes/routesAPI";
-import ErrorModal from "../errors-and-animations/ErrorModal";
+import ErrorModal from "../errors-animations-functions/ErrorModal";
+import InputCustom from "../miscellaneous-components/inputs/InputCustom";
+import InputCustomController from "../miscellaneous-components/inputs/InputCustomController";
 
 const URL_LOGIN_AUTH = "http://localhost:8080/client/login";
 
@@ -87,25 +88,21 @@ export default function Login() {
                         <div id="centralizer-link-create-account" className="text-end m-auto">
                             <p>Não possui conta? <Link to={"/registre-se"}>Abra sua conta</Link>.</p>
                         </div>
-                        <Controller 
+                        <InputCustomController
                             name="CPF_login"
                             control={control}
-                            render={({ field }) => (
-                                <IMaskInput
-                                id="CPF"
-                                mask="000.000.000-00"
-                                placeholder="CPF"
-                                required
-                                {...field}/>
-                            )}
+                            id="CPF"
+                            mask="000.000.000-00"
+                            placeholder="CPF"
+                            type="text"
                         />
-                        <div id="pass-div" >
-                            <input
+                        <div id="pass-div">
+                            <InputCustom
                                 id="password"
                                 type={type}
                                 placeholder="Digite sua senha"
-                                required
-                                {...register("pass_login")}/>
+                                register={register("pass_login")}
+                            />
                             <span className="span-eye" onClick={handleToggle}>
                                 <Icon id="icon-eye" icon={icon} size={23} />
                             </span>
@@ -113,7 +110,7 @@ export default function Login() {
                         <div>
                             <button id="submit-login">Acessar</button>
                         </div>
-                        <Link to={"/forget-pass"}>Esqueci minha senha</Link>
+                        <span id="forget-pass">Esqueci minha senha</span>
                         <div>
                             <p>Alguma dúvida? Acesse a <Link to={""}>Central de Ajuda</Link>.</p>
                             <p>Para conhecer nossa política de privacidade, acesse <Link to={"/politica-de-privacidade"}>aqui</Link>.</p>

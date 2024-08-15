@@ -1,11 +1,12 @@
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
-import {IMaskInput} from "react-imask";
 import {Link, useNavigate} from "react-router-dom";
-import {Controller, useForm} from "react-hook-form";
-import ErrorModal from "../errors-and-animations/ErrorModal";
+import {useForm} from "react-hook-form";
+import ErrorModal from "../errors-animations-functions/ErrorModal";
 import { useState } from "react";
 import { sendData } from "../routes/routesAPI";
+import InputCustom from "../miscellaneous-components/inputs/InputCustom";
+import InputCustomController from "../miscellaneous-components/inputs/InputCustomController";
 
 const URL_CREATE_SESSION = "http://localhost:8080/client/session-data";
 
@@ -62,65 +63,48 @@ export default function Registro() {
                         <div id="centralizer-link-create-account" className="text-start m-auto mb-3 mt-2">
                             <h6>Complete os campos abaixo para abrir sua conta:</h6>
                         </div>
-                        <input
+                        <InputCustom
                             id="nome-completo"
                             type="text"
                             placeholder="Nome Completo*"
-                            required
-                            {...register("nome_cliente")}/>
-                        <Controller 
+                            register={register("nome_cliente")}
+                        />
+                        <InputCustomController
                             name="CPF_cliente"
                             control={control}
-                            render={({ field }) => (
-                                <IMaskInput
-                                    id="CPF-registro"
-                                    type="text"
-                                    mask="000.000.000-00"
-                                    placeholder="CPF*"
-                                    required
-                                    {...field}/>
-                                )}
-                            />
-                        <input
+                            id="CPF-registro"
+                            type="text"
+                            placeholder="CPF*"
+                            mask="000.000.000-00"
+                        />
+                        <InputCustom
                             id="email"
                             type="email"
                             placeholder="E-mail*"
-                            required
-                            {...register("email_cliente")}/>
-                        <Controller
+                            register={register("email_client")}
+                        />
+                        <InputCustomController
                             name="celular_cliente"
                             control={control}
-                            render={({ field }) => (
-                                <IMaskInput
-                                    id="celular"
-                                    mask="(00) 90000-0000"
-                                    type="text"
-                                    placeholder="Celular*"
-                                    required
-                                    {...field}
-                                />
-                            )}
+                            id="celular"
+                            mask="(00) 90000-0000"
+                            type="text"
+                            placeholder="Celular*"
                         />
-                        <Controller
+                        <InputCustomController
                             name="data_nascimento_cliente"
                             control={control}
-                            render={({ field }) => (
-                                <IMaskInput
-                                    id="data-nascimento"
-                                    mask="00/00/0000"
-                                    type="text"
-                                    placeholder="Data de Nascimento*"
-                                    required
-                                    {...field}
-                                />
-                            )}
+                            id="data-nascimento"
+                            mask="00/00/0000"
+                            type="text"
+                            placeholder="Data de Nascimento*"
                         />
                         <div id="aceitar-tratar-dados" className="d-flex align-items-center justify-content-center m-auto text-start mt-3">
-                            <input 
-                            id="check-register" 
-                            type="checkbox" 
-                            required
-                            {...register("check_value")}/>
+                            <InputCustom
+                                id="check-register"
+                                type="checkbox"
+                                register={register("check_value")}
+                            />
                             <h6>Autorizo o Nex a tratar os meus dados pessoais e declaro que li e estou ciente da <Link to={"/politica-de-privacidade"}>Política de Privacidade</Link></h6>
                         </div>
                         <div>
