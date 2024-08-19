@@ -5,7 +5,7 @@
 /*############# BANNER #############*/
 
 #space {
-  padding: 40px;
+  padding: $banner-padding;
 }
 
 #banner {
@@ -17,7 +17,7 @@
     color: white;
     font-weight: 600;
     width: 500px;
-    padding: 0 0 0 40px;
+    padding-left: $banner-padding;
   }
 
   #banner-image {
@@ -25,7 +25,7 @@
   }
 
   .white-button {
-    @include base-button(white, $marine-blue, "Roboto", 600, 5px, none, 10px 20px);
+    @include base-button(white, $marine-blue, $button-font, $button-font-weight, $button-border-radius, none, $button-padding);
     display: inline-flex;
     align-items: center;
     width: 187px;
@@ -79,7 +79,7 @@
   color: white;
 
   #abrir-conta {
-    @include base-button(white, $marine-blue, "Roboto", 600, 5px, none, 10px 20px);
+    @include base-button(white, $marine-blue, $button-font, $button-font-weight, $button-border-radius, none, $button-padding);
     transition: transform 0.2s;
 
     &:hover {

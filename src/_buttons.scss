@@ -7,3 +7,9 @@
   border: $border;
   padding: $padding;
 }
+
+@mixin base-button2($border, $text-color, $padding) {
+  border: $border;
+  color: $text-color;
+  padding: $padding;
+}

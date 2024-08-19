@@ -4,9 +4,8 @@ footer {
   background-color: $gray;
 
   .informations {
-
     h6 {
-      font-weight: 600;
+      font-weight: $sections-font-weight;
     }
 
     a {

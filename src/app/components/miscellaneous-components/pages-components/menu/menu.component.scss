@@ -4,13 +4,13 @@
 #navbar {
   background-color: $gray !important;
   font-weight: 600;
-  box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 2px 0;
+  box-shadow: $black-transparent 1px 1px 2px 0;
   position: fixed;
   width: 100%;
   z-index: 1;
 
   #container-nav {
-    margin: 0 30px !important;
+    margin: 0 $nav-margin !important;
     max-width: 100%;
 
     #logo-menu {
@@ -21,22 +21,22 @@
     .nav-item {
       .dropdown-toggle::after {
         background: transparent url('./images/arrow-menu.png') no-repeat center center;
-        background-size: 20px;
-        width: 25px;
-        height: 25px;
+        background-size: $arrow-size;
+        width: $arrow-size + 5px;
+        height: $arrow-size + 5px;
         border: none;
         vertical-align: -20%;
       }
 
       .dropdown-menu {
-        padding: 30px;
+        padding: $dropdown-padding;
 
         h6 {
-          color: rgb(144, 144, 144) !important;
+          color: $dark-gray !important;
         }
 
         div + div {
-          margin-top: 30px;
+          margin-top: $dropdown-padding;
         }
       }
     }
@@ -67,16 +67,16 @@
         }
 
         #user-access {
-          @include base-button($marine-blue, white, "Roboto", 500, 5px, none, 10px 20px 10px 10px);
+          @include base-button($marine-blue, white, $button-font, 500, $button-border-radius, none, 10px 20px 10px 10px);
           display: flex;
           transition: 0.2s;
 
           &::before {
             content: "";
-            width: 30px;
-            height: 25px;
+            width: $logo-size + 5px;
+            height: $logo-size;
             background: transparent url('./images/logo-branco.png') no-repeat center center;
-            background-size: 25px;
+            background-size: $logo-size;
           }
 
           &:hover {

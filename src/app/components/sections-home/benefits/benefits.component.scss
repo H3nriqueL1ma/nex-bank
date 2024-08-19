@@ -1,5 +1,7 @@
+@import "../../../../variables";
+
 #benefits-title {
-  font-weight: 600;
+  font-weight: $sections-font-weight;
 }
 
 .benefit {
@@ -10,7 +12,7 @@
   }
 
   h3 {
-    font-weight: 600;
+    font-weight: $sections-font-weight;
   }
 
   p {

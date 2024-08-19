@@ -1,0 +1,70 @@
+@import "../../../../../variables";
+@import "../../../../../buttons";
+
+#canvas {
+  max-height: 105px !important;
+
+  .offcanvas-body {
+    overflow: hidden !important;
+
+    #buttons-cookies {
+      button {
+        @include base-button2(none, $marine-blue, 10px 15px);
+      }
+
+      button + button {
+        margin-left: $margin-left-spacing;
+      }
+
+      .button-cookies {
+        background-color: $marine-blue !important;
+        color: white !important;
+      }
+
+      .button-cookies, .config {
+        border: 1px solid $marine-blue !important;
+      }
+    }
+
+    #text-cookies {
+      padding: $cookie-padding;
+      color: $dark-gray;
+      font-size: $cookie-font-size;
+    }
+  }
+}
+
+#modal-cookies {
+  button {
+    @include base-button2(none, $marine-blue, 10px 15px);
+  }
+
+  input {
+    margin-right: 5px;
+  }
+
+  p {
+    font-size: $modal-font-size;
+    color: $dark-gray;
+  }
+
+  #header-cookies {
+    img + div {
+      margin-left: $header-margin;
+    }
+
+    #logo-cookies {
+      width: $logo-width;
+    }
+  }
+}
+
+.privacity {
+  color: $dark-gray !important;
+  font-weight: $text-weight;
+  margin-left: 5px;
+}
+
+.btn-close:focus {
+  box-shadow: none !important;
+}
