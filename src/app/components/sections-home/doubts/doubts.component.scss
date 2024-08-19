@@ -1,0 +1,23 @@
+#doubts-title {
+  font-weight: 600;
+}
+
+#accordions {
+  max-width: 700px;
+
+  .accordion-item {
+    font-size: 17px;
+
+    .accordion-header {
+      .accordion-button {
+        @extend .accordion-item;
+        border: none !important;
+        box-shadow: none !important;
+
+        &:not(.collapsed) {
+          background-color: white;
+        }
+      }
+    }
+  }
+}

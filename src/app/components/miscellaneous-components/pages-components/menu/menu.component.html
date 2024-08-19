@@ -1,0 +1,64 @@
+<nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary p-0">
+  <div id="container-nav" class="container-fluid">
+    <a class="navbar-brand" routerLink="/home" routerLinkActive="active">
+      <img id="logo-menu" src="logo.png" alt="logo">
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#basic-navbar-nav"
+      aria-controls="nbasic-navbar-nav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="basic-navbar-nav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown basic-nav-dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Para você
+          </a>
+          <ul class="dropdown-menu">
+            <div>
+              <h6>Conta</h6>
+              <li><a class="dropdown-item" href="#">Conta Digital</a></li>
+              <li><a class="dropdown-item" href="#">Cartão de Crédito</a></li>
+              <li><a class="dropdown-item" href="#">Rendimentos</a></li>
+            </div>
+            <div>
+              <h6>Empréstimos</h6>
+              <li><a class="dropdown-item" href="#">Antecipação FGTS</a></li>
+              <li><a class="dropdown-item" href="#">Empréstimo Consignado</a></li>
+              <li><a class="dropdown-item" href="#">Empréstimo Pessoal</a></li>
+            </div>
+          </ul>
+        </li>
+        <li class="nav-item dropdown basic-nav-dropdown about">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Sobre o Nex
+          </a>
+          <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Sobre nós</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown basic-nav-dropdown about">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Ajuda
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Fale com a gente</a></li>
+            <li><a class="dropdown-item" href="#">Ouvidoria</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div id="button-div">
+        <a routerLink="/login" routerLinkActive="active">
+          <button id="user-access">
+            <p class="m-0">Acesse sua conta</p>
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

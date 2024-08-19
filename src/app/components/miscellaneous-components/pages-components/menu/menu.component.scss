@@ -1,0 +1,93 @@
+@import "../../../../../variables";
+@import "../../../../../buttons";
+
+#navbar {
+  background-color: $gray !important;
+  font-weight: 600;
+  box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 2px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+
+  #container-nav {
+    margin: 0 30px !important;
+    max-width: 100%;
+
+    #logo-menu {
+      width: 70px;
+      margin: 0 40px 0 0;
+    }
+
+    .nav-item {
+      .dropdown-toggle::after {
+        background: transparent url('./images/arrow-menu.png') no-repeat center center;
+        background-size: 20px;
+        width: 25px;
+        height: 25px;
+        border: none;
+        vertical-align: -20%;
+      }
+
+      .dropdown-menu {
+        padding: 30px;
+
+        h6 {
+          color: rgb(144, 144, 144) !important;
+        }
+
+        div + div {
+          margin-top: 30px;
+        }
+      }
+    }
+
+    .nav-item a {
+      color: $marine-blue !important;
+    }
+
+    .nav-item + .nav-item {
+      margin-left: 20px;
+    }
+
+    .about {
+      .dropdown-menu {
+        padding: 10px !important;
+      }
+    }
+
+    #basic-navbar-nav {
+      #button-div {
+        width: 100%;
+        display: flex;
+        justify-content: end;
+
+        a {
+          text-decoration: none;
+          color: white;
+        }
+
+        #user-access {
+          @include base-button($marine-blue, white, "Roboto", 500, 5px, none, 10px 20px 10px 10px);
+          display: flex;
+          transition: 0.2s;
+
+          &::before {
+            content: "";
+            width: 30px;
+            height: 25px;
+            background: transparent url('./images/logo-branco.png') no-repeat center center;
+            background-size: 25px;
+          }
+
+          &:hover {
+            background-color: $light-marine-blue;
+          }
+
+          p {
+            padding-top: 1px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@mixin base-button($background-color, $text-color, $font, $font-weight: 400, $border-radius, $border, $padding) {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: $font;
+  font-weight: $font-weight;
+  border-radius: $border-radius;
+  border: $border;
+  padding: $padding;
+}
