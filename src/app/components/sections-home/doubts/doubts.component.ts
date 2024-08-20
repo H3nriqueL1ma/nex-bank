@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+//######### Componente Seção Dúvidas #########
+
 @Component({
   selector: 'app-doubts',
   standalone: true,

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {RouterLink, RouterLinkActive} from "@angular/router";
-import {CommonModule} from "@angular/common";
+
+//######### Componente Menu #########
 
 @Component({
   selector: 'app-menu',

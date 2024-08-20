@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+//######### Componente Rodapé #########
+
 @Component({
   selector: 'app-footer',
   standalone: true,

@@ -9,6 +9,8 @@ import {
   CanvasCookiesComponent
 } from "../../miscellaneous-components/modals-and-canvas/canvas-cookies/canvas-cookies.component";
 
+//######### Componente da página Home #########
+
 @Component({
   selector: 'app-home-page',
   standalone: true,

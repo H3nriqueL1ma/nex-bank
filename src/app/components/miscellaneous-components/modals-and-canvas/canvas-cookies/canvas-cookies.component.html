@@ -1,4 +1,4 @@
-<div class="offcanvas offcanvas-bottom" tabindex="-1" id="canvas" aria-labelledby="offcanvasBottomLabel">
+<div class="offcanvas offcanvas-bottom" tabindex="-1" id="canvas" aria-labelledby="offcanvasBottomLabel" #canvas>
   <div class="offcanvas-body small d-flex align-items-center">
     <div class="row">
       <div id="text-cookies" class="col-lg-6">
@@ -6,25 +6,25 @@
         <a class="privacity" routerLink="/politica-de-privacidade" routerLinkActive="active">Política de Privacidade</a>
       </div>
       <div id="buttons-cookies" class="col-lg-6 d-flex justify-content-center align-items-center">
-        <button class="config">Configurações de Cookies</button>
+        <button class="config" #settingsCookies>Configurações de Cookies</button>
         <button class="button-cookies">Rejeitar todos</button>
         <button class="button-cookies">Aceitar todos</button>
       </div>
     </div>
 
     <div class="offcanvas-header">
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" id="close-cookies"></button>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" id="close-cookies" #closeCookies></button>
     </div>
   </div>
 </div>
 
-<div class="modal" tabindex="-1" id="modal-cookies">
+<div class="modal" tabindex="-1" id="modal-cookies" #modalCookies>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header" id="header-cookies">
         <img id="logo-cookies" src="logo.png" alt="logo">
         <h5 class="modal-title">Configurações de Cookies</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-settings"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-settings" #closeSettings></button>
       </div>
       <div class="modal-body">
         <label>
@@ -39,7 +39,7 @@
           <p>Estes cookies são necessários para que o website funcione e não podem ser desligados nos nossos sistemas. Normalmente, eles só são configurados em resposta a ações levadas a cabo por si e que correspondem a uma solicitação de serviços, tais como definir as suas preferências de privacidade, segurança, iniciar sessão ou preencher formulários. Pode configurar o seu navegador para bloquear ou alertá-lo(a) sobre esses cookies, mas algumas partes do website não funcionarão. Estes cookies não armazenam qualquer informação pessoal identificável.</p>
         </label>
         <label>
-          <input type="checkbox" />
+          <input id="checkbox-functionality" type="checkbox" (change)="handlePreferenceChange('functionality')" #checkBoxFunctionality/>
           Cookies de Funcionalidade
           <p>Estes cookies permitem que o site forneça uma funcionalidade e personalização melhoradas. Podem ser estabelecidos por nós ou por fornecedores externos cujos serviços adicionámos às nossas páginas. Se não permitir estes cookies algumas destas funcionalidades, ou mesmo todas, podem não atuar corretamente.</p>
         </label>
