@@ -1,4 +1,4 @@
-<div class="offcanvas offcanvas-bottom" tabindex="-1" id="canvas" aria-labelledby="offcanvasBottomLabel" #canvas>
+<div class="offcanvas offcanvas-bottom" tabindex="-1" id="canvas" aria-labelledby="offcanvasBottomLabel" data-bs-backdrop="static" #canvas>
   <div class="offcanvas-body small d-flex align-items-center">
     <div class="row">
       <div id="text-cookies" class="col-lg-6">
@@ -7,8 +7,8 @@
       </div>
       <div id="buttons-cookies" class="col-lg-6 d-flex justify-content-center align-items-center">
         <button class="config" #settingsCookies>Configurações de Cookies</button>
-        <button class="button-cookies">Rejeitar todos</button>
-        <button class="button-cookies">Aceitar todos</button>
+        <button class="button-cookies" #rejectCookies>Rejeitar todos</button>
+        <button class="button-cookies" #acceptCookies>Aceitar todos</button>
       </div>
     </div>
 
@@ -18,7 +18,7 @@
   </div>
 </div>
 
-<div class="modal" tabindex="-1" id="modal-cookies" #modalCookies>
+<div class="modal fade" tabindex="-1" data-bs-backdrop="static" id="modal-cookies" aria-labelledby="header-cookies" aria-hidden="true" #modalCookies>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header" id="header-cookies">
@@ -45,7 +45,7 @@
         </label>
       </div>
       <div class="modal-footer">
-        <button class="button-cookies">Salvar Configurações</button>
+        <button class="button-cookies" #saveSettingsCookies>Salvar Configurações</button>
       </div>
     </div>
   </div>
