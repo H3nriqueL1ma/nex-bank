@@ -1,0 +1,10 @@
+@import "../../../../variables";
+
+#header-error {
+  border: none;
+
+  #exclamation-error {
+    color: $marine-blue;
+    font-size: 30px;
+  }
+}
