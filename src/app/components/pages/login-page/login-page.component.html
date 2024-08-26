@@ -14,5 +14,36 @@
         <img id="logo-login" src="logo.png" alt="logo"/>
       </a>
     </div>
+
+    <form id="form-login" class="m-auto text-center" [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+      <div id="centralizer-link-create-account" class="text-end m-auto">
+        <p>Não possui conta? <a routerLink="/registre-se">Abra sua conta</a>.</p>
+        <input
+          id="CPF"
+          [formControlName]="'CPF_login'"
+          [mask]="'000.000.000-00'"
+          placeholder="CPF"
+          type="text"
+          autofocus
+        />
+        <div id="pass-div" class="d-flex align-items-center">
+          <input
+            id="password"
+            [type]="isPasswordVisible ? 'text' : 'password'"
+            placeholder="Digite sua senha"
+            [formControlName]="'pass_login'"
+          />
+          <button id="eye-pass" type="button" (click)="togglePasswordVisibility()">
+            <i [ngClass]="isPasswordVisible ? 'bi bi-eye-fill' : 'bi bi-eye-slash-fill'"></i>
+          </button>
+        </div>
+        <div>
+          <button id="submit-login">Acessar</button>
+        </div>
+        <a routerLink="/recuperar-senha" id="forget-pass">Esqueci minha senha</a>
+        <p>Alguma dúvida? Acesse a <a routerLink="">Central de Ajuda</a>.</p>
+        <p>Para conhecer nossa política de privacidade, acesse <a routerLink="/politica-de-privacidade">aqui</a>.</p>
+      </div>
+    </form>
   </div>
 </div>

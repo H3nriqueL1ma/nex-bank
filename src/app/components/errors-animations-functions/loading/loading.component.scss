@@ -1,0 +1,39 @@
+@import "../../../../variables";
+
+#centralizer-loading {
+  height: 100vh;
+
+  #content-loading {
+    #loading-spinner {
+      width: 30px !important;
+      height: 30px !important;
+      filter: brightness(0) saturate(100%) invert(23%) sepia(15%) saturate(1191%) hue-rotate(169deg) brightness(89%) contrast(91%);
+    }
+
+    #loading-spinner, p {
+      opacity: 0;
+      animation: fadeInText 1s 0s forwards;
+    }
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInLoader {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+

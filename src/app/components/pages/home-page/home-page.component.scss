@@ -16,7 +16,8 @@
     font-family: Verdana, sans-serif;
     color: white;
     font-weight: 600;
-    width: 500px;
+    width: 510px;
+    font-size: 2em;
     padding-left: $banner-padding;
   }
 
@@ -26,43 +27,33 @@
 
   .white-button {
     @include base-button(white, $marine-blue, $button-font, $button-font-weight, $button-border-radius, none, $button-padding);
-    display: inline-flex;
-    align-items: center;
-    width: 187px;
+    width: 215px;
     margin: 30px 35px;
-    position: relative;
-    overflow: hidden;
-    transition: padding-right 0.3s ease-in-out, width 0.3s ease-in-out;
+    transition: all 0.5s;
 
-    &::before {
-      content: "Abra sua conta Nex";
-      transition: transform 0.3s ease-in-out;
-    }
+    span {
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
 
-    &::after {
-      content: "";
-      width: 35px;
-      height: 25px;
-      background: transparent url("./images/arrow-button.png") no-repeat center center !important;
-      background-size: 18px !important;
-      position: absolute;
-      right: 6px;
-      opacity: 0;
-      transform: translateX(10px);
-      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+      &::after {
+        content: "➜";
+        position: absolute;
+        right: -25px;
+        opacity: 0;
+        transition: 0.5s;
+      }
     }
 
     &:hover {
-      width: 200px !important;
-    }
+      span {
+        padding-right: 25px;
 
-    &:hover::after {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    &:hover::before {
-      transform: translateX(-4px);
+        &::after {
+          opacity: 1;
+          right: 0;
+        }
+      }
     }
   }
 
